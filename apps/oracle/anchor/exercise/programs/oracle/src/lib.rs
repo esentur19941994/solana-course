@@ -3,7 +3,7 @@ use anchor_lang::prelude::*;
 pub mod instructions;
 pub mod state;
 
-declare_id!("2LAxkM9uLztwKxvzeCKJhPV6WxF1S1mdYLToqQNxTCW9");
+declare_id!("AiGBtqEtQZ3XdroXmgmhGg698BmMszMUjPp2FX8kKk8M");
 
 #[program]
 pub mod oracle {
@@ -16,7 +16,7 @@ pub mod oracle {
     }
 
     pub fn update(ctx: Context<Update>, price: u64) -> Result<()> {
-        // Write your code here
+        instructions::update(ctx, price)?; // Вызов твоей логики
         Ok(())
     }
 }
