@@ -5,3 +5,14 @@ Cargo.lock
 test-ledger
 .anchor
 yarn.lock
+
+target/
+node_modules/
+test-ledger/
+
+**/*.json
+**/*.so
+.env
+
+yarn-error.log
+npm-debug.log*
