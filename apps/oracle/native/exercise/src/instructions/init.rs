@@ -20,6 +20,12 @@ pub fn init(
 
     // Write your code here
 
+    if oracle.owner != Pubkey::default() {
+        return Err(ProgramError::AccountAlreadyInitialized);
+    }
+
+    oracle.owner = owner;
+    oracle.price = price;
     oracle.serialize(&mut &mut data[..])?;
 
     Ok(())

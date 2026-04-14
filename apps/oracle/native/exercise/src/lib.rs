@@ -23,8 +23,12 @@ pub fn process_instruction(
     let ix = Cmd::try_from_slice(instruction_data)?;
 
     match ix {
-        Cmd::Init(owner, price) => {}
-        Cmd::Update(price) => {}
+        Cmd::Init(owner, price) => {
+            instructions::init(accounts, owner, price)?;
+        }
+        Cmd::Update(price) => {
+            instructions::update(accounts, price)?;
+        }
     }
 
     Ok(())
